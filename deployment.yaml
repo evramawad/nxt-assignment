@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nxt-assignment-app
+  namespace: eks-nxt-cluster
+  labels:
+    app: nxt-assignment-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nxt-assignment-app
+  template:
+    metadata:
+      labels:
+        app: nxt-assignment-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+                - arm64
+      containers:
+      - name: nxt-assignment
+        image: evramawad/nxt_assignment:latest
+        ports:
+        - name: http
+          containerPort: 5000
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        kubernetes.io/os: linux
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nxt-assignment-service
+  namespace: eks-nxt-cluster
+  labels:
+    app: nxt-assignment-app
+spec:
+  selector:
+    app: nxt-assignment-app
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 8000
+        
