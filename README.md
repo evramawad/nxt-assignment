@@ -1,6 +1,5 @@
 Assessment No.1:
 
-
 ● Write a Dockerfile that will run the app with security best practices in mind ( use any Hello World web application you want )
 Find Dockerfile
 
