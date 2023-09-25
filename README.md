@@ -33,8 +33,15 @@ storage, caching, and networking elements.
 ![nwt_assignment](https://github.com/evramawad/nxt-assignment/assets/49963669/fc79a44f-b053-49dc-95d0-bea0888efcd0)
 
 
-3. Infrastructure as Code (IaC): Outline the infrastructure setup using
-Infrastructure as Code concepts, using tools like Terraform, AWS
-CloudFormation, or similar.
-4. Cost optimization: Briefly discuss your strategy for optimizing resource
+2. Infrastructure as Code (IaC): Outline the infrastructure setup using Infrastructure as Code concepts, using tools like Terraform, AWS CloudFormation, or similar.
+
+Find Terraform folder
+
+
+3. Cost optimization: Briefly discuss your strategy for optimizing resource
 usage and costs without compromising security and scalability.
+
+To handle scalabilty & cost optimization I used autoscaling in EKS to scale up and down depends on traffic load, and also we can use spot instances with many instance types to use lowest cost of instances.
+
+For security all EKS resources exists in private subnets and only http traffic allowed to access frontend web application using ELB, and all resources accessing internet using NAT Gateway.
+
