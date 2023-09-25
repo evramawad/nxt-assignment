@@ -11,4 +11,5 @@ find deployment.yml file
 and provide the script used.
 
 **Tool**:kubectl
+
 **Command:** kubectl apply -f eployment.yaml
