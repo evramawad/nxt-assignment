@@ -1,5 +1,6 @@
-**Assessment No.1:
-**
+Assessment No.1:
+
+
 ● Write a Dockerfile that will run the app with security best practices in mind ( use any Hello World web application you want )
 Find Dockerfile
 
@@ -10,6 +11,4 @@ find deployment.yml file
 ● We need to deploy the created docker to AWS EKS, which tool you use,
 and provide the script used.
 
-**Tool**:kubectl
-
-**Command:** kubectl apply -f eployment.yaml
+**Tool**:kubectl  **Command:** kubectl apply -f eployment.yaml
