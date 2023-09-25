@@ -10,4 +10,6 @@ find deployment.yml file
 ● We need to deploy the created docker to AWS EKS, which tool you use,
 and provide the script used.
 
-**Tool**:kubectl  **Command:** kubectl apply -f eployment.yaml
+**Tool**:kubectl  
+
+**Command:** kubectl apply -f eployment.yaml
